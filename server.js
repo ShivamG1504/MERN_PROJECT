@@ -2,10 +2,15 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyparser from "express";
 import contactRouter from './routes/contact.js';
-
+import cors from 'cors'
 const app = express();
 
 app.use(bodyparser.json());
+app.use(cors({
+  origin:"http://localhost:5173",
+  methods:["GET","POST","PUT","DELETE"],
+  credentials:true
+}))
 
 mongoose
   .connect(
@@ -17,6 +22,7 @@ mongoose
   .then(() => console.log("mongodb connected..."));
 
   app.use('/api',contactRouter); 
+
 
 const port = 3000;
 app.listen(port, () => console.log(`server is running on port ${port} `));
