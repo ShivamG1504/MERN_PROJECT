@@ -27,7 +27,7 @@ router.put("/:id",updateContact );
 //method- Delete
 router.delete("/:id",deleteContact );
 
-router.get("/id",getContactById);
+router.get("/:id",getContactById);
 
 
 
