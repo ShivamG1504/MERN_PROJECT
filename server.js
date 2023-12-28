@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import bodyparser from "express";
 import contactRouter from './routes/contact.js';
 import cors from 'cors'
+
 const app = express();
 
 app.use(bodyparser.json());

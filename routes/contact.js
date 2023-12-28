@@ -1,6 +1,6 @@
 import express from "express";
 import { Contact } from "../Models/contact.js";
-import { addContact ,getContact,updateContact,deleteContact} from "../controllers/contact.js";
+import { addContact ,getContact,updateContact,deleteContact,getContactById } from "../controllers/contact.js";
 
 
 const router = express.Router();
@@ -27,6 +27,7 @@ router.put("/:id",updateContact );
 //method- Delete
 router.delete("/:id",deleteContact );
 
+router.get("/id",getContactById);
 
 
 

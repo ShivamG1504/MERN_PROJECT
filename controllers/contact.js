@@ -73,3 +73,12 @@ export const addContact =async (req, res) => {
       message: "your contact has been deleted Successfully",
     });
   }
+  export const getContactById =async () =>{
+    const id = req.params.id;
+  
+    let contact = await Contact.findById(id);
+  
+    if (!contact) return res.json({ message: "Id not exist...!" });
+    res.json({contact});
+
+  }
