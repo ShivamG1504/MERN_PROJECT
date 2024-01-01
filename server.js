@@ -29,6 +29,10 @@ mongoose
 
   app.use('/api',contactRouter); 
 
+  app.get('/', (req, res) => {
+    console.log('Home route accessed!');
+    res.send('Welcome to the MERN_PROJECT_Contact_Keeper API!');
+  });
 
 const port = process.env.Port;
 app.listen(port, () => console.log(`server is running on port ${port} `));
